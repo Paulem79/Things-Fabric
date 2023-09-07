@@ -1,0 +1,36 @@
+{
+	"schemaVersion": 1,
+	"id": "things",
+	"version": "${version}",
+	"name": "Things",
+	"description": "Add things.",
+	"authors": [
+		"Paulem"
+	],
+	"contact": {
+		"homepage": "https://paulem79.github.io/"
+	},
+	"license": "MIT",
+	"icon": "assets/things/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"fr.paulem.things.Things"
+		],
+		"client": [
+			"fr.paulem.things.ThingsClient"
+		],
+		"fabric-datagen": [
+			"fr.paulem.things.ThingsDataGenerator"
+		]
+	},
+	"mixins": [
+		"things.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
