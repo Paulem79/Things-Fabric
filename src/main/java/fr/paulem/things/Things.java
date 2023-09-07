@@ -11,6 +11,5 @@ public class Things implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
 	}
 }
