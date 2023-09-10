@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "tutorialmod:block/deepslate_ruby_ore"
+      "model": "things:block/deepslate_ruby_ore"
     }
   }
 }
