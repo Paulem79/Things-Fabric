@@ -18,10 +18,10 @@
           "fr.paulem.things.Things"
 		],
 		"client": [
-			"fr.paulem.things.ModThingsClient"
+          "fr.paulem.things.ThingsClient"
 		],
 		"fabric-datagen": [
-			"fr.paulem.things.ModThingsDataGenerator"
+			"fr.paulem.things.ThingsDataGenerator"
 		]
 	},
 	"mixins": [

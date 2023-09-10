@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModItems {
+public class ThingsItems {
     public static final List<ItemStack> items = new ArrayList<>();
     public static final Item RUBY = registerItem("ruby", new Item(new FabricItemSettings()));
     public static final Item RAW_RUBY = registerItem("raw_ruby", new Item(new FabricItemSettings()));
@@ -32,6 +32,6 @@ public class ModItems {
     public static void registerModItems() {
         Things.LOGGER.info("Registering mod items for " + Things.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ModItems::addItemsToItemGroup);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ThingsItems::addItemsToItemGroup);
     }
 }

@@ -18,7 +18,7 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModBlocks {
+public class ThingsBlocks {
     public static final List<ItemStack> blocks = new ArrayList<>();
     public static final Block RUBY_BLOCK = registerBlock("ruby_block",
             new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
