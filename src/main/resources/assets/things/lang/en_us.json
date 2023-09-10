@@ -1,0 +1,14 @@
+{
+  "item.things.ruby": "Ruby",
+  "item.things.raw_ruby": "Raw Ruby",
+
+  "block.things.ruby_block": "Block of Ruby",
+  "block.things.raw_ruby_block": "Block of Raw Ruby",
+
+  "block.things.ruby_ore": "Ruby Ore",
+  "block.things.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.things.nether_ruby_ore": "Nether Ruby Ore",
+  "block.things.end_stone_ruby_ore": "End Stone Ruby Ore",
+
+  "itemgroup.things": "Things"
+}

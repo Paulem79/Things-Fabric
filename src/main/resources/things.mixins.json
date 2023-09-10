@@ -3,7 +3,7 @@
 	"package": "fr.paulem.things.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
-		"ExampleMixin"
+		"ModThingsMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

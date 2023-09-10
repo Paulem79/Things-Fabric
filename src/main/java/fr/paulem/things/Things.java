@@ -1,5 +1,8 @@
 package fr.paulem.things;
 
+import fr.paulem.things.block.ModBlocks;
+import fr.paulem.things.item.ModItemGroups;
+import fr.paulem.things.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -11,5 +14,9 @@ public class Things implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
+
+		ModItemGroups.registerItemGroups();
 	}
 }
