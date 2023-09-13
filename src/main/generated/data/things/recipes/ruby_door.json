@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "ruby",
+  "key": {
+    "#": {
+      "item": "things:ruby"
+    }
+  },
+  "pattern": [
+    "##",
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "item": "things:ruby_door"
+  },
+  "show_notification": true
+}

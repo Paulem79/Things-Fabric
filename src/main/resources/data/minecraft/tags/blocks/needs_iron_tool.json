@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "things:ruby_block",
-    "things:raw_ruby_block",
-    "things:ruby_ore",
-    "things:deepslate_ruby_ore"
-  ]
-}

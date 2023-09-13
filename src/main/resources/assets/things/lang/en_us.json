@@ -2,13 +2,47 @@
   "item.things.ruby": "Ruby",
   "item.things.raw_ruby": "Raw Ruby",
 
+  "item.things.tomato": "Tomato",
+
+  "item.things.coal_briquette": "Coal Briquette",
+
+  "item.things.metal_detector": "Metal Detector",
+
+  "item.things.ruby_pickaxe": "Ruby Pickaxe",
+  "item.things.ruby_axe": "Ruby Axe",
+  "item.things.ruby_shovel": "Ruby Shovel",
+  "item.things.ruby_sword": "Ruby Sword",
+  "item.things.ruby_hoe": "Ruby Hoe",
+
+  "item.things.ruby_helmet": "Ruby Helmet",
+  "item.things.ruby_chestplate": "Ruby Chestplate",
+  "item.things.ruby_leggings": "Ruby Leggings",
+  "item.things.ruby_boots": "Ruby Boots",
+
   "block.things.ruby_block": "Block of Ruby",
   "block.things.raw_ruby_block": "Block of Raw Ruby",
+
+  "block.things.ruby_stairs": "Ruby Stairs",
+  "block.things.ruby_slab": "Ruby Slab",
+  "block.things.ruby_button": "Ruby Button",
+  "block.things.ruby_pressure_plate": "Ruby Pressure Plate",
+  "block.things.ruby_fence": "Ruby Fence",
+  "block.things.ruby_fence_gate": "Ruby Fence Gate",
+  "block.things.ruby_wall": "Ruby Wall",
+  "block.things.ruby_door": "Ruby Door",
+  "block.things.ruby_trapdoor": "Ruby Trapdoor",
 
   "block.things.ruby_ore": "Ruby Ore",
   "block.things.deepslate_ruby_ore": "Deepslate Ruby Ore",
   "block.things.nether_ruby_ore": "Nether Ruby Ore",
   "block.things.end_stone_ruby_ore": "End Stone Ruby Ore",
 
-  "itemgroup.things": "Things"
+  "block.things.sound_block": "Sound Block",
+
+  "itemgroup.things": "Things",
+
+  "messages.things.found": "Found an ore at",
+  "messages.things.not_found": "No ore found!",
+
+  "tooltip.things.metal_detector": "Help finding ores when clicking on a block"
 }

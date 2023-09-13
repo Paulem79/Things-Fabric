@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "things:ruby_ore",
+    "things:deepslate_ruby_ore",
+    "things:nether_ruby_ore",
+    "things:end_stone_ruby_ore"
+  ]
+}

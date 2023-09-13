@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#things:things_ores",
+    "#things:things_notfullblocks",
+    "things:ruby_block",
+    "things:raw_ruby_block"
+  ]
+}

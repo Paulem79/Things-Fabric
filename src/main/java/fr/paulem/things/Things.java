@@ -1,10 +1,11 @@
 package fr.paulem.things;
 
-import fr.paulem.things.block.ThingsBlocks;
-import fr.paulem.things.item.ThingsItemGroups;
-import fr.paulem.things.item.ThingsItems;
+import fr.paulem.things.block.ModBlocks;
+import fr.paulem.things.item.ModItemGroups;
+import fr.paulem.things.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.registry.FuelRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,9 +15,11 @@ public class Things implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		ThingsItems.registerModItems();
-		ThingsBlocks.registerModBlocks();
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 
-		ThingsItemGroups.registerItemGroups();
+		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200);
+
+		ModItemGroups.registerItemGroups();
 	}
 }

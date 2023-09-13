@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "group": "ruby",
+  "key": {
+    "R": {
+      "item": "things:ruby"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "R",
+    "S",
+    "S"
+  ],
+  "result": {
+    "item": "things:ruby_shovel"
+  },
+  "show_notification": true
+}
