@@ -3,10 +3,8 @@ package fr.paulem.things.item;
 import fr.paulem.things.Things;
 import fr.paulem.things.block.ModBlocks;
 import fr.paulem.things.item.custom.ItemMetalDetector;
-import fr.paulem.things.item.custom.ModArmorItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.AliasedBlockItem;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
@@ -30,11 +28,8 @@ public class ModItems {
     public static final Item RAW_ADAMANTIUM = registerItem("raw_adamantium", new Item(new FabricItemSettings()));
 
 
-    // ------------------- FOODS -------------------
-    public static final Item TOMATO = registerItem("tomato", new Item(new FabricItemSettings().food(ModFoodComponents.TOMATO)));
-
     // ------------------- FUELS -------------------
-    public static final Item COAL_BRIQUETTE = registerItem("coal_briquette", new Item(new FabricItemSettings().food(ModFoodComponents.TOMATO)));
+    public static final Item COAL_BRIQUETTE = registerItem("coal_briquette", new Item(new FabricItemSettings()));
 
 
     // ------------------- CUSTOM ITEMS -------------------
@@ -47,11 +42,6 @@ public class ModItems {
     public static final ShovelItem ADAMANTIUM_SHOVEL = registerItem("adamantium_shovel", new ShovelItem(ModToolMaterial.ADAMANTIUM, 1.5f, -3.0f, new FabricItemSettings()));
     public static final HoeItem ADAMANTIUM_HOE = registerItem("adamantium_hoe", new HoeItem(ModToolMaterial.ADAMANTIUM, -3, 0.0f, new FabricItemSettings()));
 
-    // ------------------- ARMORS -------------------
-    public static final ModArmorItem ADAMANTIUM_HELMET = registerItem("adamantium_helmet", new ModArmorItem(ModArmorMaterials.ADAMANTIUM, ArmorItem.Type.HELMET, new FabricItemSettings()));
-    public static final ArmorItem ADAMANTIUM_CHESTPLATE = registerItem("adamantium_chestplate", new ArmorItem(ModArmorMaterials.ADAMANTIUM, ArmorItem.Type.CHESTPLATE, new FabricItemSettings()));
-    public static final ArmorItem ADAMANTIUM_LEGGINGS = registerItem("adamantium_leggings", new ArmorItem(ModArmorMaterials.ADAMANTIUM, ArmorItem.Type.LEGGINGS, new FabricItemSettings()));
-    public static final ArmorItem ADAMANTIUM_BOOTS = registerItem("adamantium_boots", new ArmorItem(ModArmorMaterials.ADAMANTIUM, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
     // ------------------- SEEDS -------------------
     public static final Item TOMATO_SEEDS = registerItem("tomato_seeds",

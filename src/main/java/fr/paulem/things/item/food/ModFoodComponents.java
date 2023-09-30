@@ -1,4 +1,4 @@
-package fr.paulem.things.item;
+package fr.paulem.things.item.food;
 
 import net.minecraft.item.FoodComponent;
 

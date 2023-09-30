@@ -1,4 +1,4 @@
-package fr.paulem.things.util;
+package fr.paulem.things.util.armor;
 
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;

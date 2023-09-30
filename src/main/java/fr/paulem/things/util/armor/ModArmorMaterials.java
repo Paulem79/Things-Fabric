@@ -1,6 +1,7 @@
-package fr.paulem.things.item;
+package fr.paulem.things.util.armor;
 
 import fr.paulem.things.Things;
+import fr.paulem.things.item.ModToolMaterial;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;

@@ -2,7 +2,8 @@ package fr.paulem.things.datagen;
 
 import fr.paulem.things.block.ModBlocks;
 import fr.paulem.things.item.ModItems;
-import fr.paulem.things.util.ArmorAndToolsRecipeContainer;
+import fr.paulem.things.item.armors.Armors;
+import fr.paulem.things.util.armor.ArmorAndToolsRecipeContainer;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
@@ -77,10 +78,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 ModItems.ADAMANTIUM_AXE,
                 ModItems.ADAMANTIUM_SHOVEL,
                 ModItems.ADAMANTIUM_HOE,
-                ModItems.ADAMANTIUM_HELMET,
-                ModItems.ADAMANTIUM_CHESTPLATE,
-                ModItems.ADAMANTIUM_LEGGINGS,
-                ModItems.ADAMANTIUM_BOOTS));
+                Armors.ADAMANTIUM_HELMET,
+                Armors.ADAMANTIUM_CHESTPLATE,
+                Armors.ADAMANTIUM_LEGGINGS,
+                Armors.ADAMANTIUM_BOOTS));
     }
 
     /**

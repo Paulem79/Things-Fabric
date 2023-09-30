@@ -3,6 +3,7 @@ package fr.paulem.things.datagen;
 import fr.paulem.things.block.ModBlocks;
 import fr.paulem.things.block.custom.crops.TomatoCropBlock;
 import fr.paulem.things.item.ModItems;
+import fr.paulem.things.item.food.Foods;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
@@ -47,7 +48,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         BlockStatePropertyLootCondition.Builder builder = BlockStatePropertyLootCondition.builder(ModBlocks.TOMATO_CROP).properties(StatePredicate.Builder.create()
                 .exactMatch(TomatoCropBlock.AGE, 5));
-        addDrop(ModBlocks.TOMATO_CROP, cropDrops(ModBlocks.TOMATO_CROP, ModItems.TOMATO, ModItems.TOMATO_SEEDS, builder));
+        addDrop(ModBlocks.TOMATO_CROP, cropDrops(ModBlocks.TOMATO_CROP, Foods.TOMATO, ModItems.TOMATO_SEEDS, builder));
     }
 
     public void sameDropWithSilkTouch(Block block, Item drop) {

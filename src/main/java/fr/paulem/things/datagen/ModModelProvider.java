@@ -3,12 +3,13 @@ package fr.paulem.things.datagen;
 import fr.paulem.things.block.ModBlocks;
 import fr.paulem.things.block.custom.crops.TomatoCropBlock;
 import fr.paulem.things.item.ModItems;
+import fr.paulem.things.item.armors.Armors;
+import fr.paulem.things.item.food.Foods;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
-import net.minecraft.item.ArmorItem;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -47,7 +48,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RAW_ADAMANTIUM, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.COAL_BRIQUETTE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
+        itemModelGenerator.register(Foods.TOMATO, Models.GENERATED);
         itemModelGenerator.register(ModItems.METAL_DETECTOR, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.ADAMANTIUM_PICKAXE, Models.HANDHELD);
@@ -56,9 +57,9 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.ADAMANTIUM_SHOVEL, Models.HANDHELD);
         itemModelGenerator.register(ModItems.ADAMANTIUM_HOE, Models.HANDHELD);
 
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.ADAMANTIUM_HELMET));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.ADAMANTIUM_CHESTPLATE));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.ADAMANTIUM_LEGGINGS));
-        itemModelGenerator.registerArmor(((ArmorItem) ModItems.ADAMANTIUM_BOOTS));
+        itemModelGenerator.registerArmor(Armors.ADAMANTIUM_HELMET);
+        itemModelGenerator.registerArmor(Armors.ADAMANTIUM_CHESTPLATE);
+        itemModelGenerator.registerArmor(Armors.ADAMANTIUM_LEGGINGS);
+        itemModelGenerator.registerArmor(Armors.ADAMANTIUM_BOOTS);
     }
 }

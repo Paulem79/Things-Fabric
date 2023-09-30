@@ -1,6 +1,7 @@
 package fr.paulem.things.datagen;
 
 import fr.paulem.things.item.ModItems;
+import fr.paulem.things.item.armors.Armors;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -16,6 +17,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.ADAMANTIUM_HELMET, ModItems.ADAMANTIUM_CHESTPLATE, ModItems.ADAMANTIUM_LEGGINGS, ModItems.ADAMANTIUM_BOOTS);
+                .add(Armors.ADAMANTIUM_HELMET, Armors.ADAMANTIUM_CHESTPLATE, Armors.ADAMANTIUM_LEGGINGS, Armors.ADAMANTIUM_BOOTS);
     }
 }

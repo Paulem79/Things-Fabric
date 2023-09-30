@@ -1,7 +1,6 @@
-package fr.paulem.things.item.custom;
+package fr.paulem.things.util.armor;
 
 import com.google.common.collect.ImmutableMap;
-import fr.paulem.things.item.ModArmorMaterials;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
