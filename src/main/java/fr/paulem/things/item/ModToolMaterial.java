@@ -7,7 +7,7 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModToolMaterial implements ToolMaterial {
-    RUBY(MiningLevels.DIAMOND, 1861, 10f, 3.5f, 15, () -> Ingredient.ofItems(ModItems.RUBY));
+    ADAMANTIUM(MiningLevels.DIAMOND, 1861, 10.0f, 5.0f, 25, () -> Ingredient.ofItems(ModItems.ADAMANTIUM_INGOT));
 
     /*
     WOOD(MiningLevels.WOOD, 59, 2.0f, 0.0f, 15),
@@ -62,5 +62,9 @@ public enum ModToolMaterial implements ToolMaterial {
     @Override
     public Ingredient getRepairIngredient() {
         return this.repairIngredient.get();
+    }
+
+    public Supplier<Ingredient> getRepairIngredientSupplier(){
+        return this.repairIngredient;
     }
 }

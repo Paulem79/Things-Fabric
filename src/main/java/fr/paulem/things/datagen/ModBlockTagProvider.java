@@ -18,7 +18,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         // ------------------- CUSTOM TAGS -------------------
 
-        getOrCreateTagBuilder(ModTags.Blocks.THINGS_NOTFULLBLOCKS)
+        /*getOrCreateTagBuilder(ModTags.Blocks.THINGS_NOTFULLBLOCKS)
                 .add(ModBlocks.RUBY_WALL)
                 .add(ModBlocks.RUBY_FENCE_GATE)
                 .add(ModBlocks.RUBY_FENCE)
@@ -27,13 +27,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.RUBY_DOOR)
                 .add(ModBlocks.RUBY_STAIRS)
                 .add(ModBlocks.RUBY_SLAB)
-                .add(ModBlocks.RUBY_PRESSURE_PLATE);
+                .add(ModBlocks.RUBY_PRESSURE_PLATE);*/
 
         getOrCreateTagBuilder(ModTags.Blocks.THINGS_ORES)
-                .add(ModBlocks.RUBY_ORE)
-                .add(ModBlocks.DEEPSLATE_RUBY_ORE)
-                .add(ModBlocks.NETHER_RUBY_ORE)
-                .add(ModBlocks.END_STONE_RUBY_ORE);
+                .add(ModBlocks.ADAMANTIUM_ORE)
+                .add(ModBlocks.DEEPSLATE_ADAMANTIUM_ORE);
+                /*.add(ModBlocks.NETHER_RUBY_ORE)
+                .add(ModBlocks.END_STONE_RUBY_ORE);*/
 
 
         getOrCreateTagBuilder(ModTags.Blocks.THINGS_METAL_DETECTOR_DETECTABLE_BLOCKS)
@@ -51,28 +51,28 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .forceAddTag(ModTags.Blocks.THINGS_ORES)
-                .forceAddTag(ModTags.Blocks.THINGS_NOTFULLBLOCKS)
-                .add(ModBlocks.RUBY_BLOCK)
-                .add(ModBlocks.RAW_RUBY_BLOCK);
+                //.forceAddTag(ModTags.Blocks.THINGS_NOTFULLBLOCKS)
+                .add(ModBlocks.ADAMANTIUM_BLOCK)
+                .add(ModBlocks.RAW_ADAMANTIUM_BLOCK);
 
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.NETHER_RUBY_ORE)
-                .add(ModBlocks.RUBY_ORE)
-                .add(ModBlocks.RAW_RUBY_BLOCK);
+                //.add(ModBlocks.NETHER_RUBY_ORE)
+                .add(ModBlocks.ADAMANTIUM_ORE)
+                .add(ModBlocks.RAW_ADAMANTIUM_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.RUBY_BLOCK)
-                .add(ModBlocks.DEEPSLATE_RUBY_ORE)
-                .forceAddTag(ModTags.Blocks.THINGS_NOTFULLBLOCKS)
-                .add(ModBlocks.END_STONE_RUBY_ORE);
+                .add(ModBlocks.ADAMANTIUM_BLOCK)
+                .add(ModBlocks.DEEPSLATE_ADAMANTIUM_ORE);
+                //.forceAddTag(ModTags.Blocks.THINGS_NOTFULLBLOCKS);
+                //.add(ModBlocks.END_STONE_RUBY_ORE);
 
-        getOrCreateTagBuilder(BlockTags.FENCES)
+        /*getOrCreateTagBuilder(BlockTags.FENCES)
                 .add(ModBlocks.RUBY_FENCE);
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
                 .add(ModBlocks.RUBY_FENCE_GATE);
         getOrCreateTagBuilder(BlockTags.WALLS)
-                .add(ModBlocks.RUBY_WALL);
+                .add(ModBlocks.RUBY_WALL);*/
 
         // For custom tool level
         /*

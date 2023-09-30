@@ -1,0 +1,8 @@
+{
+  "ambiant_things": {
+    "sounds": [
+      "things:things_ambiant"
+    ],
+    "category": "ambient"
+  }
+}

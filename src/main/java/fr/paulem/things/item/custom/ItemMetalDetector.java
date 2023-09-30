@@ -23,27 +23,29 @@ public class ItemMetalDetector extends Item {
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
         PlayerEntity player = context.getPlayer();
-        if(player == null) return ActionResult.PASS;
+        if (player == null) return ActionResult.PASS;
+        if(context.getWorld().isClient()) {
+            BlockPos positionClicked = context.getBlockPos();
+            boolean foundBlock = false;
 
-        BlockPos positionClicked = context.getBlockPos();
-        boolean foundBlock = false;
+            BlockPos pos = null;
 
-        BlockPos pos = null;
+            for (int i = positionClicked.getY(); i >= -63; i--) {
+                BlockPos blockPos = positionClicked.down(Math.abs(i - positionClicked.getY()));
+                BlockState state = context.getWorld().getBlockState(blockPos);
 
-        for(int i = positionClicked.getY(); i >= -63; i--) {
-            BlockPos blockPos = positionClicked.down(Math.abs(i - positionClicked.getY()));
-            BlockState state = context.getWorld().getBlockState(blockPos);
+                if (isValuableBlock(state)) {
+                    foundBlock = true;
+                    pos = blockPos;
 
-            if(isValuableBlock(state)) {
-                foundBlock = true;
-                pos = blockPos;
-
-                break;
+                    break;
+                }
             }
-        }
 
-        if(!foundBlock) player.sendMessage(Text.translatable("messages.things.not_found"));
-        else player.sendMessage(Text.translatable("messages.things.found").append(" " + pos.getX() + ", " + pos.getY() + ", " + pos.getZ()));
+            if (!foundBlock) player.sendMessage(Text.translatable("messages.things.not_found"));
+            else
+                player.sendMessage(Text.translatable("messages.things.found").append(" " + pos.getX() + ", " + pos.getY() + ", " + pos.getZ()));
+        }
 
         context.getStack().damage(1, player, playerEntity -> playerEntity.sendToolBreakStatus(context.getHand()));
 

@@ -13,7 +13,7 @@ import net.minecraft.util.Identifier;
 public class ModItemGroups {
     public static final ItemGroup THINGS_GROUP = Registry.register(Registries.ITEM_GROUP, new Identifier(Things.MOD_ID, "things"), FabricItemGroup.builder()
             .displayName(Text.translatable("itemgroup.things"))
-            .icon(() -> new ItemStack(ModItems.RUBY))
+            .icon(() -> new ItemStack(ModItems.ADAMANTIUM_INGOT))
             .entries((displayContext, entries) -> {
                 entries.addAll(ModItems.items);
 
@@ -21,6 +21,6 @@ public class ModItemGroups {
     }).build());
 
     public static void registerItemGroups() {
-        Things.LOGGER.info("Registering Item Groups for " + Things.MOD_ID);
+        Things.LOGGER.info("Registering item groups for " + Things.MOD_ID);
     }
 }

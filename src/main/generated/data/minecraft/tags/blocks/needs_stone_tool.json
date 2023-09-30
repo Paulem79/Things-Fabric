@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "things:nether_ruby_ore",
-    "things:ruby_ore",
-    "things:raw_ruby_block"
-  ]
-}
