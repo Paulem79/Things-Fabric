@@ -1,9 +1,13 @@
 package fr.paulem.things.datagen.langs;
 
 import fr.paulem.things.block.ModBlocks;
-import fr.paulem.things.item.ModItems;
 import fr.paulem.things.item.armors.Armors;
+import fr.paulem.things.item.custom.Customs;
 import fr.paulem.things.item.food.Foods;
+import fr.paulem.things.item.fuels.Fuels;
+import fr.paulem.things.item.ores.Ores;
+import fr.paulem.things.item.seeds.Seeds;
+import fr.paulem.things.item.tools.Tools;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
@@ -14,21 +18,21 @@ public class EnglishLangProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
-        translationBuilder.add(ModItems.ADAMANTIUM_INGOT, "Adamantium Ingot");
-        translationBuilder.add(ModItems.RAW_ADAMANTIUM, "Raw Adamantium");
+        translationBuilder.add(Ores.ADAMANTIUM_INGOT, "Adamantium Ingot");
+        translationBuilder.add(Ores.RAW_ADAMANTIUM, "Raw Adamantium");
 
         translationBuilder.add(Foods.TOMATO, "Tomato");
-        translationBuilder.add(ModItems.TOMATO_SEEDS, "Tomato Seeds");
+        translationBuilder.add(Seeds.TOMATO_SEEDS, "Tomato Seeds");
 
-        translationBuilder.add(ModItems.COAL_BRIQUETTE, "Coal Briquette");
+        translationBuilder.add(Fuels.COAL_BRIQUETTE, "Coal Briquette");
 
-        translationBuilder.add(ModItems.METAL_DETECTOR, "Metal Detector");
+        translationBuilder.add(Customs.METAL_DETECTOR, "Metal Detector");
 
-        translationBuilder.add(ModItems.ADAMANTIUM_PICKAXE, "Adamantium Pickaxe");
-        translationBuilder.add(ModItems.ADAMANTIUM_AXE, "Adamantium Axe");
-        translationBuilder.add(ModItems.ADAMANTIUM_SHOVEL, "Adamantium Shovel");
-        translationBuilder.add(ModItems.ADAMANTIUM_SWORD, "Adamantium Sword");
-        translationBuilder.add(ModItems.ADAMANTIUM_HOE, "Adamantium Hoe");
+        translationBuilder.add(Tools.ADAMANTIUM_PICKAXE, "Adamantium Pickaxe");
+        translationBuilder.add(Tools.ADAMANTIUM_AXE, "Adamantium Axe");
+        translationBuilder.add(Tools.ADAMANTIUM_SHOVEL, "Adamantium Shovel");
+        translationBuilder.add(Tools.ADAMANTIUM_SWORD, "Adamantium Sword");
+        translationBuilder.add(Tools.ADAMANTIUM_HOE, "Adamantium Hoe");
 
         translationBuilder.add(Armors.ADAMANTIUM_HELMET, "Adamantium Helmet");
         translationBuilder.add(Armors.ADAMANTIUM_CHESTPLATE, "Adamantium Chestplate");

@@ -1,4 +1,4 @@
-package fr.paulem.things.util.armor;
+package fr.paulem.things.item.armors;
 
 import fr.paulem.things.Things;
 import fr.paulem.things.item.ModToolMaterial;

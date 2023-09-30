@@ -1,6 +1,8 @@
 package fr.paulem.things.util;
 
-import fr.paulem.things.item.ModItems;
+import fr.paulem.things.item.custom.Customs;
+import fr.paulem.things.item.fuels.Fuels;
+import fr.paulem.things.item.seeds.Seeds;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.loot.LootPool;
@@ -26,18 +28,18 @@ public class ModLootTableModifiers {
     public static void modifyLootTables() {
         LootTableEvents.MODIFY.register((resourceManager, lootManager, id, tableBuilder, source) -> {
             if(JUNGLE_TEMPLE_ID.equals(id))
-                createPool(tableBuilder, 1, 90, ModItems.METAL_DETECTOR, 1.0f, 1.0f);
+                createPool(tableBuilder, 1, 90, Customs.METAL_DETECTOR, 1.0f, 1.0f);
 
             if(CREEPER_ID.equals(id))
-                createPool(tableBuilder, 1, 25, ModItems.COAL_BRIQUETTE, 1.0f, 1.0f);
+                createPool(tableBuilder, 1, 25, Fuels.COAL_BRIQUETTE, 1.0f, 1.0f);
 
             if(GRASS_ID.equals(id))
-                createPool(tableBuilder, 1, 5, ModItems.TOMATO_SEEDS, 1.0f, 2.0f);
+                createPool(tableBuilder, 1, 5, Seeds.TOMATO_SEEDS, 1.0f, 2.0f);
         });
 
         LootTableEvents.REPLACE.register((resourceManager, lootManager, id, original, source) -> {
             if(SUSPICIOUS_SAND_ID.equals(id))
-                return addSusSandItems(original, ModItems.METAL_DETECTOR);
+                return addSusSandItems(original, Customs.METAL_DETECTOR);
 
             return null;
         });

@@ -1,6 +1,5 @@
 package fr.paulem.things.datagen;
 
-import fr.paulem.things.item.ModItems;
 import fr.paulem.things.item.armors.Armors;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;

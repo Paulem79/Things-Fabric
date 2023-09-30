@@ -1,9 +1,11 @@
 package fr.paulem.things.datagen;
 
 import fr.paulem.things.block.ModBlocks;
-import fr.paulem.things.item.ModItems;
+import fr.paulem.things.item.armors.ArmorAndToolsRecipeContainer;
 import fr.paulem.things.item.armors.Armors;
-import fr.paulem.things.util.armor.ArmorAndToolsRecipeContainer;
+import fr.paulem.things.item.fuels.Fuels;
+import fr.paulem.things.item.ores.Ores;
+import fr.paulem.things.item.tools.Tools;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
@@ -19,28 +21,28 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
-    private static final List<ItemConvertible> ADAMANTIUM_SMELTABLES = List.of(ModItems.RAW_ADAMANTIUM,
-            ModBlocks.ADAMANTIUM_ORE, ModBlocks.DEEPSLATE_ADAMANTIUM_ORE
-            //ModBlocks.NETHER_RUBY_ORE, ModBlocks.END_STONE_RUBY_ORE
-            );
-
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
     }
 
+    private static final List<ItemConvertible> ADAMANTIUM_SMELTABLES = List.of(Ores.RAW_ADAMANTIUM,
+            ModBlocks.ADAMANTIUM_ORE, ModBlocks.DEEPSLATE_ADAMANTIUM_ORE
+            //ModBlocks.NETHER_RUBY_ORE, ModBlocks.END_STONE_RUBY_ORE
+    );
+
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
-        offerSmelting(exporter, ADAMANTIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ADAMANTIUM_INGOT,
+        offerSmelting(exporter, ADAMANTIUM_SMELTABLES, RecipeCategory.MISC, Ores.ADAMANTIUM_INGOT,
                 0.7f, 200, "adamantium");
-        offerBlasting(exporter, ADAMANTIUM_SMELTABLES, RecipeCategory.MISC, ModItems.ADAMANTIUM_INGOT,
+        offerBlasting(exporter, ADAMANTIUM_SMELTABLES, RecipeCategory.MISC, Ores.ADAMANTIUM_INGOT,
                 0.7f, 100, "adamantium");
 
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.ADAMANTIUM_INGOT, RecipeCategory.DECORATIONS, ModBlocks.ADAMANTIUM_BLOCK);
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_ADAMANTIUM, RecipeCategory.DECORATIONS, ModBlocks.RAW_ADAMANTIUM_BLOCK);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, Ores.ADAMANTIUM_INGOT, RecipeCategory.DECORATIONS, ModBlocks.ADAMANTIUM_BLOCK);
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, Ores.RAW_ADAMANTIUM, RecipeCategory.DECORATIONS, ModBlocks.RAW_ADAMANTIUM_BLOCK);
 
-        createShapelessRecipe(RecipeCategory.MISC, ModItems.COAL_BRIQUETTE, 8, Items.COAL, exporter);
+        createShapelessRecipe(RecipeCategory.MISC, Fuels.COAL_BRIQUETTE, 8, Items.COAL, exporter);
 
-        createShapelessRecipe(RecipeCategory.MISC, Items.COAL, ModItems.COAL_BRIQUETTE, 8, exporter);
+        createShapelessRecipe(RecipeCategory.MISC, Items.COAL, Fuels.COAL_BRIQUETTE, 8, exporter);
 
         /*ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModBlocks.RUBY_BUTTON, 4)
                 .input(ModItems.ADAMANTIUM_INGOT, 1)
@@ -72,12 +74,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.RUBY_DOOR)));
         offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.RUBY_SLAB, ModItems.ADAMANTIUM_INGOT);*/
 
-        createToolsAndArmorsRecipe(ModItems.ADAMANTIUM_INGOT, exporter, "adamantium", new ArmorAndToolsRecipeContainer(
-                ModItems.ADAMANTIUM_SWORD,
-                ModItems.ADAMANTIUM_PICKAXE,
-                ModItems.ADAMANTIUM_AXE,
-                ModItems.ADAMANTIUM_SHOVEL,
-                ModItems.ADAMANTIUM_HOE,
+        createToolsAndArmorsRecipe(Ores.ADAMANTIUM_INGOT, exporter, "adamantium", new ArmorAndToolsRecipeContainer(
+                Tools.ADAMANTIUM_SWORD,
+                Tools.ADAMANTIUM_PICKAXE,
+                Tools.ADAMANTIUM_AXE,
+                Tools.ADAMANTIUM_SHOVEL,
+                Tools.ADAMANTIUM_HOE,
                 Armors.ADAMANTIUM_HELMET,
                 Armors.ADAMANTIUM_CHESTPLATE,
                 Armors.ADAMANTIUM_LEGGINGS,

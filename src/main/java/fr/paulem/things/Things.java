@@ -3,6 +3,7 @@ package fr.paulem.things;
 import fr.paulem.things.block.ModBlocks;
 import fr.paulem.things.item.ModItemGroups;
 import fr.paulem.things.item.ModItems;
+import fr.paulem.things.item.fuels.Fuels;
 import fr.paulem.things.util.ModLootTableModifiers;
 import fr.paulem.things.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
@@ -28,7 +29,7 @@ public class Things implements ModInitializer {
 
 		ModLootTableModifiers.modifyLootTables();
 
-		FuelRegistry.INSTANCE.add(ModItems.COAL_BRIQUETTE, 200);
+		FuelRegistry.INSTANCE.add(Fuels.COAL_BRIQUETTE, 200);
 
 		ModItemGroups.registerItemGroups();
 

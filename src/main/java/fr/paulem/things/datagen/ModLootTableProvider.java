@@ -2,8 +2,9 @@ package fr.paulem.things.datagen;
 
 import fr.paulem.things.block.ModBlocks;
 import fr.paulem.things.block.custom.crops.TomatoCropBlock;
-import fr.paulem.things.item.ModItems;
 import fr.paulem.things.item.food.Foods;
+import fr.paulem.things.item.ores.Ores;
+import fr.paulem.things.item.seeds.Seeds;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
@@ -30,9 +31,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ADAMANTIUM_BLOCK);
         addDrop(ModBlocks.RAW_ADAMANTIUM_BLOCK);
 
-        sameDropWithSilkTouch(ModBlocks.ADAMANTIUM_ORE, ModItems.RAW_ADAMANTIUM);
+        sameDropWithSilkTouch(ModBlocks.ADAMANTIUM_ORE, Ores.RAW_ADAMANTIUM);
         //sameDropWithSilkTouch(ModBlocks.NETHER_RUBY_ORE, ModItems.RAW_ADAMANTIUM);
-        sameDropWithSilkTouch(ModBlocks.DEEPSLATE_ADAMANTIUM_ORE, ModItems.RAW_ADAMANTIUM);
+        sameDropWithSilkTouch(ModBlocks.DEEPSLATE_ADAMANTIUM_ORE, Ores.RAW_ADAMANTIUM);
         //sameDropWithSilkTouch(ModBlocks.END_STONE_RUBY_ORE, ModItems.RAW_ADAMANTIUM);
 
         /*addDrop(ModBlocks.RUBY_BUTTON);
@@ -48,7 +49,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         BlockStatePropertyLootCondition.Builder builder = BlockStatePropertyLootCondition.builder(ModBlocks.TOMATO_CROP).properties(StatePredicate.Builder.create()
                 .exactMatch(TomatoCropBlock.AGE, 5));
-        addDrop(ModBlocks.TOMATO_CROP, cropDrops(ModBlocks.TOMATO_CROP, Foods.TOMATO, ModItems.TOMATO_SEEDS, builder));
+        addDrop(ModBlocks.TOMATO_CROP, cropDrops(ModBlocks.TOMATO_CROP, Foods.TOMATO, Seeds.TOMATO_SEEDS, builder));
     }
 
     public void sameDropWithSilkTouch(Block block, Item drop) {
@@ -57,7 +58,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @SuppressWarnings("all")
     public LootTable.Builder copperLikeOreDrops(Block drop, Item item, float minDrop, float maxDrop) {
-        return BlockLootTableGenerator.dropsWithSilkTouch(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop, ((LeafEntry.Builder)
+        return BlockLootTableGenerator.dropsWithSilkTouch(drop, (LootPoolEntry.Builder)applyExplosionDecay(drop, ((LeafEntry.Builder)
                 ItemEntry.builder(item)
                         .apply(SetCountLootFunction
                                 .builder(UniformLootNumberProvider

@@ -1,4 +1,4 @@
-package fr.paulem.things.util.armor;
+package fr.paulem.things.item.armors;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.Entity;

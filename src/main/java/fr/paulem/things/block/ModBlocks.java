@@ -53,8 +53,12 @@ public class ModBlocks {
     public static final Block RUBY_DOOR = registerBlock("ruby_door", new DoorBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_DOOR).sounds(BlockSoundGroup.AMETHYST_BLOCK).nonOpaque(), BlockSetType.ACACIA));
     public static final Block RUBY_TRAPDOOR = registerBlock("ruby_trapdoor", new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.ACACIA_TRAPDOOR).sounds(BlockSoundGroup.AMETHYST_BLOCK).nonOpaque(), BlockSetType.ACACIA));*/
 
-    public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK, new Identifier(Things.MOD_ID, "tomato_crop"),
-            new TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block TOMATO_CROP = registerBlock("tomato_crop",
+            new TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)), false);
+
+
+
+
 
 
 
@@ -67,7 +71,11 @@ public class ModBlocks {
 
 
     public static Block registerBlock(String name, Block block) {
-        blocks.add(registerBlockItem(name, block).getDefaultStack());
+        return registerBlock(name, block, true);
+    }
+
+    public static Block registerBlock(String name, Block block, boolean registerItem) {
+        if(registerItem) blocks.add(registerBlockItem(name, block).getDefaultStack());
         return Registry.register(Registries.BLOCK, new Identifier(Things.MOD_ID, name), block);
     }
 

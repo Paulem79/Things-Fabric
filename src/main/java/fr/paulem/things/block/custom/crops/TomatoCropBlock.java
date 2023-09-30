@@ -1,6 +1,6 @@
 package fr.paulem.things.block.custom.crops;
 
-import fr.paulem.things.item.ModItems;
+import fr.paulem.things.item.seeds.Seeds;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CropBlock;
@@ -19,7 +19,7 @@ public class TomatoCropBlock extends CropBlock {
 
     @Override
     protected ItemConvertible getSeedsItem() {
-        return ModItems.TOMATO_SEEDS;
+        return Seeds.TOMATO_SEEDS;
     }
 
     @Override
