@@ -1,6 +1,7 @@
 package fr.paulem.things.datagen.langs;
 
 import fr.paulem.things.block.ModBlocks;
+import fr.paulem.things.enchants.EnchantHandler;
 import fr.paulem.things.item.armors.Armors;
 import fr.paulem.things.item.custom.Customs;
 import fr.paulem.things.item.food.Foods;
@@ -49,5 +50,8 @@ public class EnglishLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add("messages.things.found", "Found an ore at");
         translationBuilder.add("messages.things.not_found", "No ore found!");
+
+        translationBuilder.add(EnchantHandler.EXPLODE.getTranslationKey(), "Explosion");
+        translationBuilder.add(EnchantHandler.EXPLODE.getTranslationKey() + ".desc", "Create an explosion when a mob is hit.");
     }
 }

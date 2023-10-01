@@ -1,6 +1,7 @@
 package fr.paulem.things;
 
 import fr.paulem.things.block.ModBlocks;
+import fr.paulem.things.enchants.EnchantHandler;
 import fr.paulem.things.item.ModItemGroups;
 import fr.paulem.things.item.ModItems;
 import fr.paulem.things.item.fuels.Fuels;
@@ -30,6 +31,8 @@ public class Things implements ModInitializer {
 		ModLootTableModifiers.modifyLootTables();
 
 		FuelRegistry.INSTANCE.add(Fuels.COAL_BRIQUETTE, 200);
+
+		EnchantHandler.init();
 
 		ModItemGroups.registerItemGroups();
 

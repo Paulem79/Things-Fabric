@@ -11,8 +11,8 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    ADAMANTIUM("adamantium", 33, new int[] { 4, 8, 6, 4 }, 25,
-            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 2.0f, 0.1f, ModToolMaterial.ADAMANTIUM.getRepairIngredientSupplier());
+    ADAMANTIUM("adamantium", 35, new int[] { 4, 8, 6, 4 }, 12,
+            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0f, 0.1f, ModToolMaterial.ADAMANTIUM.getRepairIngredientSupplier());
 
     /*
     LEATHER("leather", 5, new int[] { 1, 3, 2, 1 }, 15, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0.0f, 0.0f),

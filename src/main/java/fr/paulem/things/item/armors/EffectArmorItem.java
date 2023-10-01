@@ -1,6 +1,5 @@
 package fr.paulem.things.item.armors;
 
-import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -10,15 +9,34 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-import java.util.Map;
+import java.util.List;
 
-public class ModArmorItem extends ArmorItem {
-    private static final Map<ArmorMaterial, StatusEffectInstance> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, StatusEffectInstance>())
-                    .put(ModArmorMaterials.ADAMANTIUM, new StatusEffectInstance(StatusEffects.HASTE, -1, 0,
-                            false, false, true)).build();
+public class EffectArmorItem extends ArmorItem {
+    private static final List<ArmorEffects> ARMOR_EFFECTS = List.of(
+            new ArmorEffects(ModArmorMaterials.ADAMANTIUM,
+                    new StatusEffectInstance(StatusEffects.HASTE, -1, 0, false, false, true),
+                    new StatusEffectInstance(StatusEffects.HEALTH_BOOST, -1, 0, false, false, true))
+    );
 
-    public ModArmorItem(ArmorMaterial material, Type type, Settings settings) {
+    public static class ArmorEffects {
+        private final ArmorMaterial material;
+        private final List<StatusEffectInstance> effects;
+
+        public ArmorEffects(ArmorMaterial material, StatusEffectInstance... effects){
+            this.material = material;
+            this.effects = List.of(effects);
+        }
+
+        public ArmorMaterial getMaterial() {
+            return material;
+        }
+
+        public List<StatusEffectInstance> getEffects() {
+            return effects;
+        }
+    }
+
+    public EffectArmorItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
     }
 
@@ -34,20 +52,24 @@ public class ModArmorItem extends ArmorItem {
     }
 
     private void evaluateArmorEffects(PlayerEntity player) {
-        for (Map.Entry<ArmorMaterial, StatusEffectInstance> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
-            ArmorMaterial mapArmorMaterial = entry.getKey();
-            StatusEffectInstance mapStatusEffect = entry.getValue();
+        for (ArmorEffects entry : ARMOR_EFFECTS) {
+            ArmorMaterial mapArmorMaterial = entry.getMaterial();
+            List<StatusEffectInstance> mapStatusEffect = entry.getEffects();
 
             addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
         }
     }
 
-    private void addStatusEffectForMaterial(PlayerEntity player, ArmorMaterial mapArmorMaterial, StatusEffectInstance mapStatusEffect) {
-        boolean hasEffect = player.hasStatusEffect(mapStatusEffect.getEffectType());
+    private void addStatusEffectForMaterial(PlayerEntity player, ArmorMaterial mapArmorMaterial, List<StatusEffectInstance> mapStatusEffect) {
+        boolean hasEffect = player.getStatusEffects().containsAll(mapStatusEffect);
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasEffect)
-            player.addStatusEffect(new StatusEffectInstance(mapStatusEffect));
+            for (StatusEffectInstance statusEffect : mapStatusEffect){
+                player.addStatusEffect(new StatusEffectInstance(statusEffect));
+            }
         else if(!hasCorrectArmorOn(mapArmorMaterial, player) && hasEffect)
-            player.removeStatusEffect(mapStatusEffect.getEffectType());
+            for (StatusEffectInstance statusEffect : mapStatusEffect){
+                player.removeStatusEffect(statusEffect.getEffectType());
+            }
     }
 
     private boolean hasFullSuitOfArmorOn(PlayerEntity player) {

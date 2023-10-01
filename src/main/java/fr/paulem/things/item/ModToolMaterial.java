@@ -8,7 +8,7 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum ModToolMaterial implements ToolMaterial {
-    ADAMANTIUM(MiningLevels.DIAMOND, 1861, 10.0f, 5.0f, 25, () -> Ingredient.ofItems(Ores.ADAMANTIUM_INGOT));
+    ADAMANTIUM(MiningLevels.DIAMOND, 1861, 10.0f, 5.0f, 12, () -> Ingredient.ofItems(Ores.ADAMANTIUM_INGOT));
 
     /*
     WOOD(MiningLevels.WOOD, 59, 2.0f, 0.0f, 15),
