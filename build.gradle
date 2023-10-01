@@ -43,15 +43,16 @@ repositories {
 }
 
 modrinth {
-	token = getModrinthKey() // Please use an environment variable for this! The default is `$MODRINTH_TOKEN`.
-	projectId = 'kK2k0VPu' // The ID of your Modrinth project. Slugs will not work.
-	versionNumber = '1.0.0' // The (preferably SemVer) version of the mod. If not specified, it'll use the `version` declaration
-	versionName = '[1.20.1] Things 1.0.0' // The version title. If not specified, it'll use the version number
-	uploadFile = remapJar // Tells Minotaur to use the remapped jar
-	gameVersions = ['1.20.1'] // An array of game versions the version supports
-	loaders = ['fabric'] // Self-explanatory.
+	token = getModrinthKey()
+	projectId = 'kK2k0VPu'
+	versionNumber = '1.0.0'
+	versionName = '[1.20.1] Things 1.0.0'
+	changelog = ""
+	uploadFile = remapJar
+	gameVersions = ['1.20.1']
+	loaders = ['fabric']
 	dependencies = [
-			new ModDependency('P7dR8mSH', DependencyType.REQUIRED) // Creates a new required dependency on Fabric API
+			new ModDependency('P7dR8mSH', DependencyType.REQUIRED)
 	]
 }
 

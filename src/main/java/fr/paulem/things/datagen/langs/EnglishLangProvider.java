@@ -53,5 +53,7 @@ public class EnglishLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(EnchantHandler.EXPLODE.getTranslationKey(), "Explosion");
         translationBuilder.add(EnchantHandler.EXPLODE.getTranslationKey() + ".desc", "Create an explosion when a mob is hit.");
+
+        translationBuilder.add("tooltip.things.metal_detector", "Find ores by right clicking.");
     }
 }

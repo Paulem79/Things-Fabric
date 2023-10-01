@@ -53,5 +53,7 @@ public class FrenchLangProvider extends FabricLanguageProvider {
 
         translationBuilder.add(EnchantHandler.EXPLODE.getTranslationKey(), "Explosion");
         translationBuilder.add(EnchantHandler.EXPLODE.getTranslationKey() + ".desc", "Créer une explosion lorsqu'un monstre est frappé.");
+
+        translationBuilder.add("tooltip.things.metal_detector", "Trouve des minerais en faisant un clic droit.");
     }
 }
