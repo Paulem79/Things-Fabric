@@ -45,11 +45,12 @@ repositories {
 modrinth {
 	token = getModrinthKey()
 	projectId = 'kK2k0VPu'
-	versionNumber = project.mod_version
-	versionName = 'Things ' + project.mod_version
-	changelog = "Added metal detector tooltip"
+	versionNumber = project.mod_version.split("-")[0]
+	versionName = "[" + project.mod_version.split("-")[1] + "]" + ' Things ' + project.mod_version.split("-")[0]
+	changelog = "Fixed metal detector tooltip https://github.com/Paulem79/Things-Fabric/commit/a1ee5bb597d58eeb819206856a619f5e0aae43f3"
 	uploadFile = remapJar
-	gameVersions = ['1.20.1']
+	versionType = "beta"
+	gameVersions = [project.mod_version.split("-")[1]]
 	loaders = ['fabric']
 	dependencies = [
 			new ModDependency('P7dR8mSH', DependencyType.REQUIRED)
