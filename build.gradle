@@ -17,7 +17,7 @@ base {
 
 // Définition de la fonction pour lire une variable à partir du fichier .env
 def getModrinthKey() {
-	def envFile = file('.env')
+	def envFile = file('env/.env')
 	def envContent = envFile.text
 	def envLines = envContent.tokenize('\n')
 

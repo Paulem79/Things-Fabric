@@ -33,7 +33,7 @@ bin/
 run/
 src/main/generated
 Maquettes
-*.env
+env/
 
 # java
 
