@@ -45,9 +45,9 @@ repositories {
 modrinth {
 	token = getModrinthKey()
 	projectId = 'kK2k0VPu'
-	versionNumber = '1.0.0'
-	versionName = '[1.20.1] Things 1.0.0'
-	changelog = ""
+	versionNumber = project.mod_version
+	versionName = 'Things ' + project.mod_version
+	changelog = "Added metal detector tooltip"
 	uploadFile = remapJar
 	gameVersions = ['1.20.1']
 	loaders = ['fabric']
