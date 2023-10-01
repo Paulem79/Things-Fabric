@@ -33,7 +33,7 @@ bin/
 run/
 src/main/generated
 Maquettes
-.gitignore
+.env
 
 # java
 

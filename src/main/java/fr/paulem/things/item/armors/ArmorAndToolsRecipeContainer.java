@@ -8,12 +8,15 @@ import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
 
 public class ArmorAndToolsRecipeContainer {
-    public SwordItem sword;
-    public PickaxeItem pickaxe;
-    public AxeItem axe;
-    public ShovelItem shovel;
-    public HoeItem hoe;
-    public ArmorItem helmet, chesplate, leggings, boots;
+    public final SwordItem sword;
+    public final PickaxeItem pickaxe;
+    public final AxeItem axe;
+    public final ShovelItem shovel;
+    public final HoeItem hoe;
+    public final ArmorItem helmet;
+    public final ArmorItem chesplate;
+    public final ArmorItem leggings;
+    public final ArmorItem boots;
     public ArmorAndToolsRecipeContainer(SwordItem sword, PickaxeItem pickaxe, AxeItem axe, ShovelItem shovel,
                                         HoeItem hoe, ArmorItem helmet, ArmorItem chesplate, ArmorItem leggings, ArmorItem boots){
         this.sword = sword;

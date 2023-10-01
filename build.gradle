@@ -1,7 +1,12 @@
 plugins {
 	id 'fabric-loom' version '1.3-SNAPSHOT'
 	id 'maven-publish'
+	id "com.modrinth.minotaur" version "2.+"
 }
+
+
+import com.modrinth.minotaur.dependencies.DependencyType
+import com.modrinth.minotaur.dependencies.ModDependency
 
 version = project.mod_version
 group = project.maven_group
@@ -10,12 +15,44 @@ base {
 	archivesName = project.archives_base_name
 }
 
+// Définition de la fonction pour lire une variable à partir du fichier .env
+def getModrinthKey() {
+	def envFile = file('.env')
+	def envContent = envFile.text
+	def envLines = envContent.tokenize('\n')
+
+	envLines.each { line ->
+		def keyValue = line.tokenize('=')
+		if (keyValue.size() == 2) {
+			def key = keyValue[0].trim()
+			def value = keyValue[1].trim()
+			project.ext.set(key, value)
+		}
+	}
+
+	// Vous pouvez maintenant accéder aux variables comme ceci :
+	return project.ext.MODRINTH_TOKEN
+}
+
 repositories {
 	maven { url = 'https://maven.minecraftforge.net/' }
 	maven { url = 'https://jitpack.io' }
 	maven { url "https://maven.shedaniel.me/" }
 	maven { url "https://maven.terraformersmc.com/releases/" }
 	maven { url = "https://api.modrinth.com/maven" }
+}
+
+modrinth {
+	token = getModrinthKey() // Please use an environment variable for this! The default is `$MODRINTH_TOKEN`.
+	projectId = 'kK2k0VPu' // The ID of your Modrinth project. Slugs will not work.
+	versionNumber = '1.0.0' // The (preferably SemVer) version of the mod. If not specified, it'll use the `version` declaration
+	versionName = '[1.20.1] Things 1.0.0' // The version title. If not specified, it'll use the version number
+	uploadFile = remapJar // Tells Minotaur to use the remapped jar
+	gameVersions = ['1.20.1'] // An array of game versions the version supports
+	loaders = ['fabric'] // Self-explanatory.
+	dependencies = [
+			new ModDependency('P7dR8mSH', DependencyType.REQUIRED) // Creates a new required dependency on Fabric API
+	]
 }
 
 loom {
@@ -43,6 +80,7 @@ sourceSets {
 		}
 	}
 }
+
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
